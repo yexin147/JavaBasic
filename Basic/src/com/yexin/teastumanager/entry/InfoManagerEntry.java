@@ -6,5 +6,6 @@ public class InfoManagerEntry {
         System.out.println("修改git账号为yexincom");
         System.out.println("修改git账号为yexincom");
         System.out.println("github上提交一下");
+        System.out.println("github上提交一下");
     }
 }
