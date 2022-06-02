@@ -1,10 +1,10 @@
 package com.yexin.teastumanager.domain;
 
 public class Student {
-    private String id;
-    private String name;
-    private String age;
-    private String birthday;
+    private String id;//学号
+    private String name;//姓名
+    private String age;//年领
+    private String birthday;//生日
 
     public Student() {
     }
