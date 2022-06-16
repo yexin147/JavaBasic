@@ -33,7 +33,7 @@ public class StudentManager {
                   System.out.println("修改学生");
                   break;
               case "4":
-                  System.out.println("查看学生");
+                  queryStudent(list);
                   break;//退出这一层级的循环
               case "5":
                   System.out.println("退出");
@@ -42,6 +42,18 @@ public class StudentManager {
                   System.out.println("您的输入不正确，请重新输入！");
           }
       }
+    }
+
+    private static void queryStudent(ArrayList<Student>list) {
+        if(list.size()==0){
+            System.out.println("无学生信息，请添加后查看");
+            return;
+        }
+        System.out.println("学号\t姓名\t年龄\t生日");
+        for (int i = 0; i < list.size(); i++) {
+            Student student = list.get(i);
+            System.out.println(student.getId()+"\t"+student.getName()+"\t"+student.getAge()+"\t"+student.getBirthday());
+        }
     }
 
     public static void addStudent(ArrayList<Student> list) {
@@ -55,6 +67,7 @@ public class StudentManager {
         System.out.println("请输入学生生日：");
         String birth = sc.next ();
         Student stu = new Student(sid,name,age,birth);
+        list.add(stu);
         System.out.println("添加学生成功");
     }
 
