@@ -3,13 +3,13 @@ package com.yexin.teastumanager.domain;
 public class Student {
     private String id;//学号
     private String name;//姓名
-    private String age;//年领
+    private int age;//年领
     private String birthday;//生日
 
     public Student() {
     }
 
-    public Student(String id, String name, String age, String birthday) {
+    public Student(String id, String name, int age, String birthday) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -32,19 +32,19 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
     public String getBirthday() {
         return birthday;
     }
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
