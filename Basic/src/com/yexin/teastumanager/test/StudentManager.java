@@ -30,7 +30,7 @@ public class StudentManager {
                   delStudengt(list);
                   break;
               case "3":
-                  System.out.println("修改学生");
+                  updateStudengt(list);
                   break;
               case "4":
                   queryStudent(list);
@@ -43,7 +43,30 @@ public class StudentManager {
           }
       }
     }
-
+    private static void updateStudengt(ArrayList<Student> list) {
+        while(true){
+            System.out.println("请输入你要修改的学生学号：");
+            Scanner sc = new Scanner(System.in);
+            String id = sc.next();
+            int index = getIndex(list, id);
+            if(index==-1){
+                System.out.println("你要修改的学生信息不存在！请重新输入");
+            }else{
+                Student student = list.get(index);
+                System.out.println("请输入新姓名：");
+                String newname = sc.next();
+                System.out.println("请输入新年龄：");
+                int newage = sc.nextInt();
+                System.out.println("请输入新生日：");
+                String newbirth = sc.next();
+                student.setName(newname);
+                student.setAge(newage);
+                student.setBirthday(newbirth);
+                System.out.println("修改成功");
+                break;
+            }
+        }
+    }
     private static void delStudengt(ArrayList<Student> list) {
         while(true){
             System.out.println("请输入你要删除的学生学号：");
@@ -53,7 +76,7 @@ public class StudentManager {
             if(index==-1){
                 System.out.println("你要删除的学生信息不存在！请重新输入");
             }else{
-                list.remove(id);
+                list.remove(index);
                 System.out.println("删除成功");
                 break ;
             }
