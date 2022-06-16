@@ -27,7 +27,7 @@ public class StudentManager {
                   addStudent(list);
                   break;
               case "2":
-                  System.out.println("删除学生");
+                  delStudengt(list);
                   break;
               case "3":
                   System.out.println("修改学生");
@@ -44,6 +44,33 @@ public class StudentManager {
       }
     }
 
+    private static void delStudengt(ArrayList<Student> list) {
+        while(true){
+            System.out.println("请输入你要删除的学生学号：");
+            Scanner sc = new Scanner(System.in);
+            String id = sc.next();
+            int index = getIndex(list, id);
+            if(index==-1){
+                System.out.println("你要删除的学生信息不存在！请重新输入");
+            }else{
+                list.remove(id);
+                System.out.println("删除成功");
+                break ;
+            }
+        }
+    }
+
+    private static int getIndex(ArrayList<Student>list,String id){
+        int index =-1;
+        for (int i = 0; i < list.size(); i++) {
+            Student student = list.get(i);
+            String id1 = student.getId();
+            if(id1.equals(id)){
+                index=i;
+            }
+        }
+        return index;
+    }
     private static void queryStudent(ArrayList<Student>list) {
         if(list.size()==0){
             System.out.println("无学生信息，请添加后查看");
